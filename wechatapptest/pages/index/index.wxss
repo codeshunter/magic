@@ -1,0 +1,74 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #000;
+}
+
+.usermotto {
+  /* margin-top: 200px; */
+}
+.parent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+}
+.addcardview {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    box-shadow: 0 0 3px;
+    width: 80%;
+    min-height: 150px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding-top: 20px;
+}
+.addcardview input {
+    display: inline-block;
+    border: 1px solid #1E90FF;
+    height: 30px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.btngroup {
+    display: flex;
+    width: 100%;
+    
+}
+.btngroup button {
+    display: inline-block;
+    width: 50%;
+}
+.btngroup button::after {
+    border-radius: 0;
+}
+.btnleft {
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.btnright {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

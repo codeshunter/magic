@@ -1,0 +1,63 @@
+body {
+    background: #F1DEA4;
+    /*background-image: url("/static/mags/imgs/bg.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 211px 162px;*/
+    /*background-position: 85px 14px;*/
+}
+#mags_body_bg {
+    position: absolute;
+    width: 58.6%;
+    height: 25.3%;
+    bottom: 13.3%;
+    right: 4%;
+}
+.mags_bind_form {
+    background: #fff;
+    margin: 17.5% 9.2% 0!important;
+    border-radius: 10px;
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+}
+.mags_bind_form .layui-input {
+    border-radius: 19px;
+}
+.mags_bind_form .layui-form-label {
+    width: 50px;
+}
+.mags_bind_form .layui-input-block {
+    margin-left: 80px;
+}
+.magic_logo {
+    padding: 0!important;
+    width: 68px!important;
+}
+.magic_logo>img {
+    width: 68px;
+    height: 68px;
+}
+.mags_form_header {
+    line-height: 68px;
+    font-size: 1.7em;
+}
+.mags_submitter {
+    display: block!important;
+    width: 38px!important;
+    height: 38px!important;
+    border-radius: 100%!important;
+    margin: 0 auto;
+    padding-left: 0!important;
+    padding-right: 0!important;
+    background-color: #F1DEA4!important;
+}
+.btn_center {
+    display: block!important;
+    margin: 0 auto;
+}
+.single_line_msg_title {
+    line-height: 68px;
+    font-size: 1.7em;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 8%;
+}

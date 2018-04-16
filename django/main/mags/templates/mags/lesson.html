@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课表</title>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7825121879571904",
+        enable_page_level_ads: true
+      });
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html {
+            width: 90vh;
+            /* height: 100vw; */
+        }
+        body {
+            background-size: cover;
+            font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans", "Noto Sans CJK Sc", "Microsoft YaHei", "Microsoft Jhenghei", sans-serif;
+            padding-top: 38px;
+            overflow: scroll;
+            position: relative;
+            background-image: url(/static/mags/imgs/lessonbg.png);
+            /* background-position: 50%; */
+            background-repeat: repeat;
+            overflow: auto;
+        }
+        .main {
+            padding: 16px;
+            margin: 0 16px 16px 16px;
+            background: #A3A6A8;
+            border-radius: 8px;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        .background img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        .row {
+            width: 100%;
+            display: flex;
+        }
+        .cell {
+            flex: 1;
+            font-size: 12px;
+            padding: 4px;
+            border: 1px solid #94989A;
+        }
+        .cell-title {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+        .class-section {
+            width: 80px;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #94989A;
+        }
+        .section-num {
+            font-size: 28px;
+        }
+        .section-time {
+            font-size: 12px;
+        }
+        .split-section {
+            text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <div class="background">
+        <img src="./image/bg.png" alt="">
+    </div> -->
+    <div class="main">
+        <div class="course-wrapper">
+            <div class="row week">
+                <div class="class-section"></div>
+                <div class="cell cell-title">周一</div>
+                <div class="cell cell-title">周二</div>
+                <div class="cell cell-title">周三</div>
+                <div class="cell cell-title">周四</div>
+                <div class="cell cell-title">周五</div>
+                <div class="cell cell-title">周六</div>
+                <div class="cell cell-title">周日</div>
+            </div>
+                <div class="row">
+                    <div class="class-section">
+                        <span class="section-num">1</span>
+                        <span class="section-time">8:00-9:35</span>
+                    </div>
+                    {% for cells in indexs %}
+                        <div class="cell">
+                            {% if lessons[0][cells] != '' and lessons[1][cells] != '' %}
+                                {{ lessons[0][cells] }} <hr> {{ lessons[1][cells] }}
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            <div class="row">
+                <div class="class-section">
+                    <span class="section-num">2</span>
+                    <span class="section-time">9:50-12:15</span>
+                </div>
+                {% for cells in indexs %}
+                    <div class="cell">
+                    {% if lessons[2][cells] != '' and lessons[3][cells] != '' and lessons[4][cells] != '' %}
+                        {{ lessons[2][cells] }} <hr> {{ lessons[3][cells] }} <hr> {{ lessons[4][cells] }}
+                    {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="split-section">午休</div>
+            <div class="row">
+                <div class="class-section">
+                    <span class="section-num">3</span>
+                    <span class="section-time">14:00-15:35</span>
+                </div>
+                {% for cells in indexs %}
+                    <div class="cell">
+                        {% if lessons[5][cells] != '' and lessons[6][cells] != '' %}
+                        {{ lessons[5][cells] }} <hr> {{ lessons[6][cells] }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="class-section">
+                    <span class="section-num">4</span>
+                    <span class="section-time">15:50-17:25</span>
+                </div>
+                {% for cells in indexs %}
+                    <div class="cell">
+                        {% if lessons[7][cells] != '' and lessons[8][cells] != '' %}
+                        {{ lessons[7][cells] }} <hr> {{ lessons[8][cells] }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="split-section">晚饭</div>
+            <div class="row">
+                <div class="class-section">
+                    <span class="section-num">5</span>
+                    <span class="section-time">18:30-20:55</span>
+                </div>
+                {% for cells in indexs %}
+                    <div class="cell">
+                        {% if lessons[9][cells] != '' and lessons[10][cells] != '' and lessons[11][cells] != '' %}
+                        {{ lessons[9][cells] }} <hr> {{ lessons[10][cells] }} <hr> {{ lessons[11][cells] }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script>
+        /*强制横屏*/
+        function horizontalScreen(className) {
+            // transform 强制横屏
+            var conW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var conH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            // transform: rotate(90deg); width: 667px; height: 375px;transform-origin:28% 50%;
+            //var iosTopHe = 0;//若有其他样式判断，写于此
+
+            $(className).css({
+                "transform": "rotate(-90deg) translate(" + (-(conH - conW) / 2) + "px," + (-(conH - conW) / 2) + "px)",
+                "width": conH + "px",
+                "height": conW + "px",
+                //"margin-top":iosTopHe+"px",  
+                // "border-left":iosTopHe+"px solid #000",  
+                "transform-origin": "center center",
+                "-webkit-transform-origin": "center center"
+            });
+        }  
+        horizontalScreen('body')
+    </script>
+</body>
+</html>

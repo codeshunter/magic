@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <map></map>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+    <button bindtap='scan'>扫一扫</button>
+  </view>
+</view> -->
+<view style='flex-direction: column;padding: 10px'>
+    <view class='card'>1</view>
+</view>
+<view class='parent' animation='{{animationData}}'>
+    <view class='addcardview'>
+        说说你的心里话
+        <form style='width: 100%;text-align: center;' bindsubmit='commit'>
+            <input id='sec' type='text' name='sec'/>
+            <view class='btngroup'>
+                <button class='btnleft' bindtap='disappear' >取消</button>
+                <button class='btnright' form-type='submit'>发布</button>
+            </view>
+        </form>
+    </view>
+</view>
+<button class='letitgo' plain='true' bindtap='showCard'>+</button>

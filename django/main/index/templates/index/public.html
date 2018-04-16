@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>河海魔法屋</title>
+    <link rel="stylesheet" type="text/css" href="/static/index/iview/iview.css">
+    <script type="text/javascript" src="/static/index/iview/vue.min.js"></script>
+    <script type="text/javascript" src="/static/index/iview/iview.min.js"></script>
+    <script type="text/javascript" src="/static/index/js/axios.min.js"></script>
+    <link rel="stylesheet" href="/static/index/faicon/css/font-awesome.min.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7825121879571904",
+        enable_page_level_ads: true
+      });
+    </script>
+</head>
+<style>
+    .title {
+        display: inline-block;
+        line-height: normal;
+        vertical-align: super;
+        text-align: center;
+        color: #005050;
+    }
+    .title>span:first-child {
+        font-size: 30px!important;
+        line-height: 30px!important;
+    }
+    .title>span:last-child {
+        font-size: 18px!important;
+        line-height: 20px!important;
+    }
+    .subtitle {
+        font-size: 30px!important;
+        line-height: 80px!important;
+    }
+    .subtitlep {
+        text-align: center;
+    }
+    .content-center {
+        text-align: center;
+    }
+    .content {
+        font-size: 20px;
+        color: #005050;
+        padding: 20px 100px;
+        background: #DFDEC4;
+        margin-top: 50px;
+    }
+    .halfcontent {
+        padding: 100px 100px 0 100px;
+{#        font-size: 20px;#}
+    }
+    .halfcontent>div:first-child {
+        font-size: 30px;
+        color: #005050;
+        margin-bottom: 70px;
+    }
+    .halfcontent>div:nth-child(2) {
+        margin-bottom: 100px;
+    }
+
+    .footer {
+        padding: 20px 0;
+        text-align: center;
+        font-size: 40px;
+        color: white;
+        background: #EB7A67;
+        letter-spacing: 30px;
+    }
+
+    .footer2 {
+        background: #4D4D4D;
+        padding: 50px 0;
+        color: #ffffff;
+    }
+
+    .about-us-title {
+        font-size: 20px;
+        color: #005050;
+        font-weight: normal;
+        padding: 70px;
+    }
+    .line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 1px);
+        width: 2px;
+        background: #F4B1A7;
+    }
+    .usinfo p {
+        line-height: 50px;
+    }
+    .mail {
+        padding: 50px 250px;
+        color: #ffffff;
+        background: #D1D0AA;
+        margin-top: 70px;
+    }
+    .mail input,textarea {
+        color: white;
+        background: rgba(0,0,0,0);
+        border: 1px solid white;
+        box-sizing: border-box;
+{#        text-align:center;#}
+        font-size:1.4em;
+        height:2.7em;
+        border-radius:2px;
+        -web-kit-appearance:none;
+        -moz-appearance: none;
+        display:block;
+        outline:0;
+        padding:0 1em;
+        text-decoration:none;
+        width:100%;
+        margin-bottom: 10px;
+{#        -web-kit-appearance:none;#}
+{#        -moz-appearance: none;#}
+    }
+    .mail input::-moz-placeholder {
+        color: #ffffff;
+    }
+    .mail input:-moz-placeholder {
+        color: #ffffff;
+    }
+    .mail input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+    .mail input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+    .mail input:focus {
+        border: 2px solid white;
+    }
+    .mail textarea::-moz-placeholder {
+        color: #ffffff;
+    }
+    .mail textarea:-moz-placeholder {
+        color: #ffffff;
+    }
+    .mail textarea::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+    .mail textarea:-ms-input-placeholder {
+        color: #ffffff;
+    }
+    .mail textarea:focus {
+        border: 2px solid white;
+    }
+</style>
+<body>
+<div id="app">
+    <i-menu mode="horizontal" :theme="theme" :active-name="index" @on-select="onClick">
+        <img src="/static/index/imgs/logo.jpg" alt="" style="height: 100%; margin-left: 100px">
+        <div class="title">
+            <span>河海魔法屋</span><br>
+            <span>www.magicdaxue.com</span>
+        </div>
+        <menu-item name="5" :style="style">
+            关于我们
+        </menu-item>
+{#        <menu-item name="4" :style="style">#}
+{#            FAQ#}
+{#        </menu-item>#}
+{#        <menu-item name="3" :style="style">#}
+{#            BLOG#}
+{#        </menu-item>#}
+{#        <menu-item name="2" :style="style">#}
+{#            SHOP#}
+{#        </menu-item>#}
+        <menu-item name="1" :style="style">
+            主页
+        </menu-item>
+    </i-menu>
+    {% block content %}
+
+
+    {% endblock %}
+
+    <row class="footer">
+        <i-col span="24">
+            <i class="fa fa-comment" aria-hidden="true"></i>
+            <i class="fa fa-weibo" aria-hidden="true"></i>
+            <i class="fa fa-qq" aria-hidden="true"></i>
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <i class="fa fa-cloud-download" aria-hidden="true"></i>
+        </i-col>
+    </row>
+    <row class="footer2">
+        <i-col span="24" class="content-center">
+            hhumfw <br>
+            tel：18251826927 <br><br>
+            地址：南京市江宁区佛城西路8号思源楼100 <br>
+            Copyright © 2005-2018 河海魔法屋 All Rights Reserved  版权所有
+        </i-col>
+    </row>
+</div>
+<script>
+
+    function getCookie (objName) {//获取指定名称的cookie的值
+        var arrStr = document.cookie.split("; ");
+        for (var i = 0; i < arrStr.length; i++) {
+            var temp = arrStr[i].split("=");
+            if (temp[0] == objName)
+                return unescape(temp[1]);
+        }
+    }
+
+     var app = new Vue({
+        el: '#app',
+        data: {
+            visible: false,
+            theme: 'light',
+            style: {float: 'right'},
+            addrs: ['/', '/', '/', '/', '/aboutus'],
+            banner: {width: '100%'},
+            name: '',
+            phone: '',
+            detail: '',
+            wechat: '',
+            loading: false
+        },
+        methods: {
+            show: function () {
+                this.visible = true;
+            },
+            onClick: function (name) {
+                localStorage.setItem('index', name)
+                var index = parseInt(name)
+                console.log(index + typeof index)
+                window.location.href = this.addrs[index - 1]
+            },
+            sendMail: function () {
+                this.loading = true
+                if (this.name == '' || this.phone == '' || this.detail == '' || this.wechat == '') {
+                    this.$Message.error('请将信息填写完整');
+                    this.loading = false
+                } else {
+                    axios.post('/mags/sendmail', {
+                        name: this.name,
+                        phone: this.phone,
+                        detail: this.detail,
+                        wechat: this.wechat,
+                    }, {
+                        headers: {"X-CSRFtoken": getCookie("csrftoken")}
+                    }).then(function (response) {
+{#                        console.log(response)#}
+                        if (response.data == 'success') {
+                            app.$Notice.success({
+                                title: '发送成功',
+                                desc: '我们将稍后回复您的邮件',
+                            })
+                        } else {
+                            app.$Notice.error({
+                                title: '发送失败',
+                                desc: '邮件服务暂时出现问题，您可以拨打18251826927和我们联系',
+                            })
+                        }
+                        app.loading = false
+                    }).catch(function (error) {
+                        app.$Notice.error({
+                            title: '发送失败',
+                            desc: '邮件服务暂时出现问题，您可以拨打18251826927和我们联系',
+                        })
+                        app.loading = false
+                    });
+                }
+            },
+        },
+        computed: {
+            index: function () {
+                return (localStorage.getItem('index') ? localStorage.getItem('index') : 1).toString()
+            }
+        }
+    })
+</script>
+</body>
+</html>

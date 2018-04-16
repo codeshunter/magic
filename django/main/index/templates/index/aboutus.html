@@ -1,0 +1,56 @@
+{% extends 'index/public.html' %}
+{% block content %}
+    <row>
+        <i-col class="about-us-title content-center" span="24"><h1>关于我们</h1></i-col>
+    </row>
+    <row style="color: #005050;" class="usinfo">
+        <i-col span="12" class="content-center">
+            <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 40px;"></i> <br>
+            <p style="font-size: 20px">工作地点</p>
+            <p>TEL:1825182692</p>
+            <p>QQ:782428800</p>
+            <p>南京市江宁区佛城西路8号思源楼100</p>
+        </i-col>
+        <div class="line"></div>
+        <i-col span="12" class="content-center">
+            <i class="fa fa-clock-o" aria-hidden="true" style="font-size: 40px;"></i> <br>
+            <p style="font-size: 20px">工作时间</p>
+            <p>周一-周五: 10.00 - 21.30</p>
+            <p>周六: 11.00 - 17.00</p>
+            <p>周日: 14.30 - 21.30</p>
+        </i-col>
+    </row>
+    <row class="mail">
+        <row>
+            <i-col span="24" style="padding: 10px">如有事项，可留言等待我们回复</i-col>
+        </row>
+        <row gutter="20">
+            <i-col span="12">
+                <row>
+                    <i-col span="24">
+                        <input v-model="name" placeholder="姓名" style="width: 100%" />
+                        {% csrf_token %}
+                    </i-col>
+                </row>
+                <row>
+                    <i-col span="24">
+                        <input v-model="wechat" placeholder="微信" style="width: 100%" />
+                    </i-col>
+                </row>
+                <row>
+                    <i-col span="24">
+                        <input v-model="phone" placeholder="手机号" style="width: 100%" />
+                    </i-col>
+                </row>
+            </i-col>
+            <i-col span="12">
+                <textarea v-model="detail" type="textarea" placeholder="合作事项" style="height: 157px"></textarea>
+            </i-col>
+        </row>
+        <row>
+            <i-col span="24" style="text-align: end">
+                <i-button type="success" @click="sendMail" :loading="loading">send</i-button>
+            </i-col>
+        </row>
+    </row>
+{% endblock %}

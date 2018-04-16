@@ -1,0 +1,48 @@
+{% extends 'mags/public.html' %}
+{% block content %}
+<div class="layui-container mags_bind_form">
+    <form action="{{ url('clogin') }}" class="layui-form" method="post">
+        {% csrf_token %}
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label magic_logo">
+                <img src="/static/mags/imgs/logo.png" alt="">
+            </label>
+            <div class="layui-input-block mags_form_header layui-word-aux">
+                教务账号绑定
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">学&nbsp;&nbsp;&nbsp;&nbsp;号</label>
+            <div class="layui-input-block">
+                <input type="text" name="stuid" required  lay-verify="required" placeholder="请输入学号" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+            <div class="layui-input-block">
+                <input type="password" name="stupwd" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <input type="hidden" name="uuid" value="{{ uuid }}">
+        <input type="hidden" name="type" value="{{ type }}">
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label">验证码</label>
+            <div class="layui-input-block">
+                <input type="text" name="stucode" required  lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input"
+                    style="width: 50%;display: inline">
+                <img src="{{ url('vcode') }}?uuid={{ uuid }}" alt="">
+                <i class="layui-icon" id="refresh_code" style="font-weight: bold">&#x1002;</i>
+            </div>
+        </div>
+        <button class="layui-btn layui-btn-primary mags_submitter" lay-submit>绑定</button>
+    </form>
+</div>
+{% endblock %}
+<script>
+    {% block jscontent %}
+        $('#refresh_code').click(function () {
+            console.log(123)
+            $(this).prev().attr("src", "{{ url('vcode') }}" + "?uuid={{ uuid }}" + "&random=" + Math.random())
+        })
+    {% endblock %}
+</script>

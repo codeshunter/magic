@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教务功能</title>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7825121879571904",
+        enable_page_level_ads: true
+      });
+    </script>
+</head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="/static/mags/css/index.css">
+<link rel="stylesheet" href="/static/mags/layui/css/layui.css">
+<body>
+    <img src="/static/mags/imgs/bg.png" alt="" id="mags_body_bg">
+    {% block content %}
+    {% endblock %}
+</body>
+<script src="/static/mags/layui/layui.js"></script>
+<script>
+    layui.use('form', function () {
+        var form = layui.form
+        var $ = layui.$
+        $('.btn_center').click(function () {
+            history.back()
+        })
+        {% block jscontent %}
+        {% endblock %}
+    })
+</script>
+</html>

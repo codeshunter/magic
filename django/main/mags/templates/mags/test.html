@@ -1,0 +1,11 @@
+{% extends 'mags/public.html' %}
+{% block content %}
+<div class="layui-container mags_bind_form"
+     style="padding-top: 10%!important;padding-bottom: 10%!important;">
+    <div class="single_line_msg_title layui-word-aux">
+        密码或验证码错误
+    </div>
+    {{ data[11][index] }}
+    <button class="layui-btn layui-btn-primary btn_center">确定</button>
+</div>
+{% endblock %}
